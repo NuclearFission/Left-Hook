@@ -1,33 +1,58 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Left Hook!</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about_us.html">About Us</a></li>
+      <li><a href="dev_log.html">Dev Log</a></li>
+    </ul>
+  </nav>
 
-<title>Welcome to Left Hook!</title>
-<h1>
-  Welcome to Left Hook!
-</h1>
-<img src = "https://cdn.discordapp.com/attachments/1092456919622488100/1095003050445377607/image0.jpg" align = "center"/>
+  <h1>Welcome to Left Hook!</h1>
+  <img src="https://cdn.discordapp.com/attachments/1092456919622488100/1095003050445377607/image0.jpg" alt="Game logo" />
 
-<h2>Meet the team! </h2>
-  <img src = "https://cdn.discordapp.com/attachments/1097620252113780959/1097646526555230208/IMG_6278.jpg" align = "center" height = "300" width = "400"/>
+ <p>Ever want to experience the thrill of fishing and fighting at the same time? Well, you've come to the right place! Get Left Hook and prepare for an action-packed showdown with... FISH?!</p>
+  
+  <img id="floatingFish" src="https://i.imgur.com/xKiHIaf.png" alt="Floating fish" style="position:absolute; left:0; top:0; cursor:pointer; width: 100px; height: auto;">
 
+  <!-- Health bar container and health bar -->
+  <div id="healthBarContainer" style="position:absolute; left:0; top:0; width:100px; height:10px; background-color: #000000;">
+    <div id="healthBar" style="width:100%; height:10px; background-color: #FF0000;"></div>
+  </div>
 
-  <p> Pictured: </p>
-  <ul>
-    <li>Ana </li>
-    <li>Ben </li>
-      <li>Danny </li>
-      <li>Eric </li>
-      <li>Harrison </li>
-      <li>Heath </li>
-      <li>Mason </li>
-      <li>Quan </li>
-      <li>Riley </li>
-      <li>Serena </li>
-      <li>Shaina </li>
-      <li>Stanley </li>
-      <p>And the professor... </p>
-      <li>Adrian </li>
-  </ul>
+  <!-- JavaScript is between the script tag -->
+  <script>
+    const fish = document.getElementById("floatingFish");
+    const healthBarContainer = document.getElementById("healthBarContainer");
+    const healthBar = document.getElementById("healthBar");
 
-<h2> Devlog </h2>
-<p> Updates go here! </p>
-    </html>
+    let clicks = 0;
+
+    fish.addEventListener("click", () => {
+      const randomX = Math.floor(Math.random() * (window.innerWidth - fish.clientWidth));
+      const randomY = Math.floor(Math.random() * (window.innerHeight - fish.clientHeight));
+
+      fish.style.left = randomX + "px";
+      fish.style.top = randomY + "px";
+
+      healthBarContainer.style.left = randomX + "px";
+      healthBarContainer.style.top = (randomY - 15) + "px";
+
+      clicks++;
+      healthBar.style.width = (100 - (clicks * 10)) + "%";
+
+      if (clicks >= 10) {
+        fish.style.display = "none";
+        healthBarContainer.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
