@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Left Hook</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about_us.html">About Us</a></li>
+      <li><a href="dev_log.html">Dev Log</a></li>
+    </ul>
+  </nav>
+
+  <h2>Meet the team!</h2>
+  <img src="https://cdn.discordapp.com/attachments/1097620252113780959/1097646526555230208/IMG_6278.jpg" alt="Team photo" height="300" width="400"/>
+
+<img id="floatingFish" src="https://i.imgur.com/xKiHIaf.png" alt="Floating fish" style="position:absolute; left:0; top:0; cursor:pointer; width: 100px; height: auto;">
+
+  <!-- Health bar container and health bar -->
+  <div id="healthBarContainer" style="position:absolute; left:0; top:0; width:100px; height:10px; background-color: #000000;">
+    <div id="healthBar" style="width:100%; height:10px; background-color: #FF0000;"></div>
+  </div>
+
+  <!-- JavaScript is between the script tag -->
+  <script>
+    const fish = document.getElementById("floatingFish");
+    const healthBarContainer = document.getElementById("healthBarContainer");
+    const healthBar = document.getElementById("healthBar");
+
+    let clicks = 0;
+
+    fish.addEventListener("click", () => {
+      const randomX = Math.floor(Math.random() * (window.innerWidth - fish.clientWidth));
+      const randomY = Math.floor(Math.random() * (window.innerHeight - fish.clientHeight));
+
+      fish.style.left = randomX + "px";
+      fish.style.top = randomY + "px";
+
+      healthBarContainer.style.left = randomX + "px";
+      healthBarContainer.style.top = (randomY - 15) + "px";
+
+      clicks++;
+      healthBar.style.width = (100 - (clicks * 10)) + "%";
+
+      if (clicks >= 10) {
+        fish.style.display = "none";
+        healthBarContainer.style.display = "none";
+      }
+    });
+  </script>
+
+  <p>Pictured:</p>
+  <ul>
+    <li>Ana</li>
+    <li>Ben</li>
+    <li>Danny</li>
+    <li>Eric</li>
+    <li>Harrison</li>
+    <li>Heath</li>
+    <li>Mason</li>
+    <li>Quan</li>
+    <li>Riley</li>
+    <li>Serena</li>
+    <li>Shaina</li>
+    <li>Stanley</li>
+  </ul>
+  <p>And the professor...</p>
+  <ul>
+    <li>Adrian</li>
+  </ul>
+</body>
+</html>

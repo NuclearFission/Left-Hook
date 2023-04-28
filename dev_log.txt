@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dev Log - Left Hook</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about_us.html">About Us</a></li>
+      <li><a href="dev_log.html">Dev Log</a></li>
+    </ul>
+  </nav>
+
+  <h2>Dev Log</h2>
+  <p>Updates go here!</p>
+</body>
+</html>
