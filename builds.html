@@ -3,15 +3,34 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Left Hook Game</title>
+    <title>Builds | Left Hook Game</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div style="text-align: center; padding: 50px;">
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about_us.html">About Us</a></li>
+            <li><a href="dev_log.html">Dev Log</a></li>
+            <li><a href="builds.html">Builds</a></li>
+        </ul>
+    </nav>
+
+    <div style="padding: 50px;">
         <h2>Left Hook Game</h2>
         <p>Sorry, the WebGL version isn't available right now. However, you can play the game on itch.io!</p>
         <a href="https://serenashafer.itch.io/left-hook-alpha" target="_blank">Play Left Hook on itch.io</a>
     </div>
+    
+    <script>
+        function showTime() {
+            document.getElementById('currentTime').innerHTML = new Date().toUTCString();
+        }
+        showTime();
+        setInterval(function () {
+            showTime();
+        }, 1000);
+    </script>
 </body>
 </html>
